@@ -1,0 +1,15 @@
+{
+  "name": "hanzihub",
+  "version": "1.0.0",
+  "description": "Chinese study deck capable of creating study decks of personalized chinese phrases and characters.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shelden Rattray",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.9"
+  }
+}
