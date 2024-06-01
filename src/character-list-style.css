@@ -6,6 +6,11 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #header {
@@ -22,18 +27,23 @@ body {
 }
 
 #card {
-  display: flex;
   background: white;
   color: #3D3D3D;
   border-radius: 25px;
-  width: 62.5vw;
-  height: 62.5vh;
-  margin-bottom: 7.5vh;
+  width: 45vw;
+  height: 90vh;
+  margin-top: 20vh;
   font-size: 7vh;
   font-weight: 600;
-  justify-content: center;
-  align-items: center;
+  overflow-y: scroll;
   z-index: 2;
+}
+
+#card-grid {
+  padding: 3vw;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2vw;
 }
 
 #card-shadow {
@@ -41,8 +51,9 @@ body {
   position: absolute;
   background: #00000045;
   border-radius: 25px;
-  width: 62.5vw;
-  height: 62.5vh;
+  width: 45vw;
+  height: 90vh;
+  margin-top: 30vh;
   justify-content: center;
   align-items: center;
   margin-bottom: 0vh;
@@ -81,6 +92,18 @@ body {
   position: absolute;
   bottom: 50vh;
   gap: 70vw;
+}
+
+#character {
+  display: flex;
+  flex: 1 1 calc(20% - 2vw);
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  border-radius: 1.5vw;
+  background: rgb(197, 197, 197);
+  aspect-ratio: 1 / 1;
+  width: 6vw;
 }
 
 .mirror {
