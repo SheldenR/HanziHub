@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: "Poppins";
+    background-color: #4DE3BF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+#reveal {
+    background-color: #E34D4D;
+    overflow: hidden;
+    position: absolute;
+    height: 8vh;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.container {
+    height: 200px;
+    position: relative;
+    border: 3px solid green;
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.card-body {
+    display: flex;
+    padding: 40px 40px;
+    text-align: center;
+    height: 100px;
+    }
+.card-wrapper {
+    box-shadow: 0 30px 35px rgba(0,0,0,0.2),0 10px 15px rgba(0,0,0,0.19);
+    width: 25rem;
+    border-radius: 25px;
+    background-color: white;
+    }
