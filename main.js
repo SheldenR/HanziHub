@@ -6,7 +6,7 @@ const createWindow = () => {
     height: 600
   })
 
-  win.loadFile('src/phrase-list.html')
+  win.loadFile('src/homepage.html')
 }
 
 app.whenReady().then(() => {

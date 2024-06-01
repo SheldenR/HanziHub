@@ -37,7 +37,7 @@ a:hover {
   font-weight: 300;
   font-size: 2.5vh;
   margin: 0;
-  margin-top: -20px;
+  margin-top: -3vh;
 }
 
 #study-options {
@@ -54,10 +54,11 @@ a:hover {
 #character-list {
   display: flex;
   background: #4DE3BF;
-  border-radius: 20px;
+  border-radius: 10vh;
+  font-size: 3vh;
   padding: 10px;
   width: 25vw;
-  height: 50px;
+  height: 6vw;
   align-items: center;
   justify-content: center;
 }
@@ -65,10 +66,11 @@ a:hover {
 #phrase-list {
   display: flex;
   background: #4DE3BF;
-  border-radius: 20px;
+  border-radius: 10vh;
+  font-size: 3vh;
   padding: 10px;
   width: 25vw;
-  height: 50px;
+  height: 6vw;
   align-items: center;
   justify-content: center;
 }
@@ -87,8 +89,8 @@ a:hover {
   height: 30vh;
   width: 57vw;
   margin-top: 50px;
-  border-radius: 20px;
-  font-size: 100%;
+  border-radius: 5vh;
+  font-size: 3.5vh;
   color: rgb(186, 186, 186);
   outline: dashed 2px rgb(186, 186, 186);
   outline-offset: -2px;

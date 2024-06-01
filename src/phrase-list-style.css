@@ -1,44 +1,74 @@
 body {
-    margin: 0;
-    font-family: "Poppins";
-    background-color: #4DE3BF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  margin: 0;
+  font-family: "Poppins";
+  background: #4DE3BF;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6vh;
+  font-weight: 700;
+  color: white;
+  top: 2.5vh;
+  width: 50vw;
+  height: 10vh;
+}
+
+#card {
+  display: flex;
+  background: white;
+  color: #3D3D3D;
+  border-radius: 25px;
+  width: 62.5vw;
+  height: 62.5vh;
+  margin-bottom: 7.5vh;
+  font-size: 7vh;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+
 #reveal {
-    background-color: #E34D4D;
-    overflow: hidden;
-    position: absolute;
-    height: 8vh;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  background: #E34D4D;
+  font-size: 3vh;
+  color: white;
+  width: 100vw;
+  height: 7.5vh;
 }
-.container {
-    height: 200px;
-    position: relative;
-    border: 3px solid green;
-  }
-  
-  .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+
+#navigation-icon {
+  width: 5vw;
 }
-.card-body {
-    display: flex;
-    padding: 40px 40px;
-    text-align: center;
-    height: 100px;
-    }
-.card-wrapper {
-    box-shadow: 0 30px 35px rgba(0,0,0,0.2),0 10px 15px rgba(0,0,0,0.19);
-    width: 25rem;
-    border-radius: 25px;
-    background-color: white;
-    }
+
+#navigation-icon-mini {
+  width: 3vw;
+}
+
+#navigation {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+#card-navigation {
+  display: flex;
+  position: absolute;
+  bottom: 50vh;
+  gap: 70vw;
+}
+
+.mirror {
+  transform: scale(-1);
+}
