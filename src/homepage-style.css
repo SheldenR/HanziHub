@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: "Poppins";
+  user-select: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 25vh;
+  background: #4DE3BF;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+#header-title {
+  font-size: 10vh;
+  font-weight: 900;
+}
+
+#header-subtitle {
+  font-weight: 300;
+  font-size: 2.5vh;
+  margin: 0;
+  margin-top: -20px;
+}
+
+#study-options {
+  display: flex;
+  gap: 2.5vw;
+  max-width: fit-content;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#character-list {
+  display: flex;
+  background: #4DE3BF;
+  border-radius: 20px;
+  padding: 10px;
+  width: 25vw;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+#phrase-list {
+  display: flex;
+  background: #4DE3BF;
+  border-radius: 20px;
+  padding: 10px;
+  width: 25vw;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#upload-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 57vw;
+  margin-top: 50px;
+  border-radius: 20px;
+  font-size: 100%;
+  color: rgb(186, 186, 186);
+  outline: dashed 2px rgb(186, 186, 186);
+  outline-offset: -2px;
+}
