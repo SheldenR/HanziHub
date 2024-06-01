@@ -55,7 +55,7 @@ a:hover {
   display: flex;
   background: #4DE3BF;
   border-radius: 10vh;
-  font-size: 3vh;
+  font-size: 2.25vw;
   padding: 10px;
   width: 25vw;
   height: 6vw;
@@ -67,7 +67,7 @@ a:hover {
   display: flex;
   background: #4DE3BF;
   border-radius: 10vh;
-  font-size: 3vh;
+  font-size: 2.25vw;
   padding: 10px;
   width: 25vw;
   height: 6vw;
@@ -90,7 +90,7 @@ a:hover {
   width: 57vw;
   margin-top: 50px;
   border-radius: 5vh;
-  font-size: 3.5vh;
+  font-size: 2.8vw;
   color: rgb(186, 186, 186);
   outline: dashed 2px rgb(186, 186, 186);
   outline-offset: -2px;
