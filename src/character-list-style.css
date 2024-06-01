@@ -44,6 +44,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2vw;
+  margin-bottom: 5vh;
 }
 
 #card-shadow {

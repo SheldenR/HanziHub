@@ -79,7 +79,7 @@ body {
 #card-navigation {
   display: flex;
   position: absolute;
-  bottom: 50vh;
+  bottom: calc(50vh - 5px);
   gap: 70vw;
 }
 
