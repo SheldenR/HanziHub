@@ -94,4 +94,5 @@ a:hover {
   color: rgb(186, 186, 186);
   outline: dashed 2px rgb(186, 186, 186);
   outline-offset: -2px;
+  cursor: pointer;
 }
