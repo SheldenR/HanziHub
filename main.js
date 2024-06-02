@@ -81,15 +81,40 @@ ipcMain.handle('open-dialog', async () => {
     if (line !== "Time		Subtitle		Translation") {
       formatted_line = line.substring(11) + "\n";
       split_formatted_line = formatted_line.split("	");
-      formatted_line = split_formatted_line[0] + "\n" + split_formatted_line[split_formatted_line.length - 1] + "\n";
+      formatted_line = split_formatted_line[0].trimEnd() + "\n" + split_formatted_line[split_formatted_line.length - 1].trimEnd() + "\n";
       phrase_list += formatted_line;
+      phrases = ""
+      phrase_list.split(/\r?\n/).forEach(line =>  {
+        if (line !== ""){
+          phrases += line += "\n";
+        }
+      })
     }
   });
 
-  fs.writeFile('user-storage/phrase-list.txt', phrase_list, err => {
+  fs.writeFile('user-storage/phrase-list.txt', phrases, err => {
     if (err) { // Catch error when writing file
       console.error(err);
     }
   });
   
+});
+
+ipcMain.handle('fetch-char-len', async () => {
+  try {
+    const data = await fs.promises.readFile('user-storage/character-list.txt', 'utf8');
+    return data.length;
+  } catch (err) {
+    console.error(err);
+    return 0; // Return 0 or another appropriate value in case of error
+  }
+});
+
+ipcMain.handle('fetch-char', async (event, index) => {
+  try {
+    const data = await fs.promises.readFile('user-storage/character-list.txt', 'utf8');
+    return data.charAt(index);
+  } catch (err) {
+    return "？"; 
+  }
 });

@@ -1,5 +1,8 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-    openDialog: (options) => ipcRenderer.invoke('open-dialog', options)
+    openDialog: () => ipcRenderer.invoke('open-dialog'),
+    fetchCharLength: () => ipcRenderer.invoke('fetch-char-len'),
+    fetchChar: (index) => ipcRenderer.invoke('fetch-char', index)
 });
+
