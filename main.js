@@ -118,3 +118,33 @@ ipcMain.handle('fetch-char', async (event, index) => {
     return "？"; 
   }
 });
+
+ipcMain.handle('fetch-phrases', async () => {
+  try {
+    let arr = []
+    const data = await fs.promises.readFile('user-storage/phrase-list.txt', 'utf8');
+    data.split(/\r?\n/).forEach(line =>  {
+      if (line.match(/[\u3400-\u9FBF]/)) {
+        arr.push(line);
+      }
+    });
+    return arr;
+  } catch (err) {
+    return [""]; 
+  }
+});
+
+ipcMain.handle('fetch-translations', async () => {
+  try {
+    let arr = []
+    const data = await fs.promises.readFile('user-storage/phrase-list.txt', 'utf8');
+    data.split(/\r?\n/).forEach(line =>  {
+      if (!line.match(/[\u3400-\u9FBF]/)) {
+        arr.push(line);
+      }
+    });
+    return arr;
+  } catch (err) {
+    return [""]; 
+  }
+});

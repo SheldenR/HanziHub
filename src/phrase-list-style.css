@@ -9,6 +9,7 @@ body {
 }
 
 #header {
+  user-select: none;
   position: absolute;
   display: flex;
   align-items: center;
@@ -50,7 +51,9 @@ body {
 }
 
 #reveal {
+  user-select: none;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -64,6 +67,7 @@ body {
 
 #navigation-icon {
   width: 5vw;
+  cursor: pointer;
 }
 
 #navigation-icon-mini {
