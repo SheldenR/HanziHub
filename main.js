@@ -18,6 +18,7 @@ const createWindow = () => {
   }
   });
 
+  win.setMenu(null);
   win.loadFile('src/homepage.html');
 }
 
