@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+const homedir = require('os').homedir();
 const fs = require('fs');
 const path = require('path');
 
@@ -10,6 +11,7 @@ const createWindow = () => {
     height: 600,
     minWidth: 800,
     minHeight: 600,
+    icon: path.join(__dirname, 'visuals/icon.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'), 
       contextIsolation: true,
@@ -39,6 +41,9 @@ app.on('window-all-closed', () => {
 // IPC handling
 
 ipcMain.handle('open-dialog', async () => {
+  if (!fs.existsSync(homedir + '/hanzihub-cache/')) {
+    fs.mkdirSync(homedir + '/hanzihub-cache/');
+  }
   const result = await dialog.showOpenDialog({
     title: "HanziHub - Import File",
     filters: [
@@ -65,7 +70,7 @@ ipcMain.handle('open-dialog', async () => {
     character_list = new Set(character_list);
     character_list = [...character_list].join("");
 
-    fs.writeFile('user-storage/character-list.txt', character_list, err => {
+    fs.writeFile(path.join(homedir, 'hanzihub-cache/character-list.txt'), character_list, err => {
       if (err) { // Catch error when writing file
         console.error(err);
       }
@@ -92,7 +97,7 @@ ipcMain.handle('open-dialog', async () => {
     }
   });
 
-  fs.writeFile('user-storage/phrase-list.txt', phrases, err => {
+  fs.writeFile(path.join(homedir, 'hanzihub-cache/phrase-list.txt'), phrases, err => {
     if (err) { // Catch error when writing file
       console.error(err);
     }
@@ -101,8 +106,11 @@ ipcMain.handle('open-dialog', async () => {
 });
 
 ipcMain.handle('fetch-char-len', async () => {
+  if (!fs.existsSync(homedir + '/hanzihub-cache/')) {
+    fs.mkdirSync(homedir + '/hanzihub-cache/');
+  }
   try {
-    const data = await fs.promises.readFile('user-storage/character-list.txt', 'utf8');
+    const data = await fs.promises.readFile(path.join(homedir, 'hanzihub-cache/character-list.txt'), 'utf8');
     return data.length;
   } catch (err) {
     console.error(err);
@@ -111,8 +119,11 @@ ipcMain.handle('fetch-char-len', async () => {
 });
 
 ipcMain.handle('fetch-char', async (event, index) => {
+  if (!fs.existsSync(homedir + '/hanzihub-cache/')) {
+    fs.mkdirSync(homedir + '/hanzihub-cache/');
+  }
   try {
-    const data = await fs.promises.readFile('user-storage/character-list.txt', 'utf8');
+    const data = await fs.promises.readFile(path.join(homedir, 'hanzihub-cache/character-list.txt'), 'utf8');
     return data.charAt(index);
   } catch (err) {
     return "？"; 
@@ -120,9 +131,12 @@ ipcMain.handle('fetch-char', async (event, index) => {
 });
 
 ipcMain.handle('fetch-phrases', async () => {
+  if (!fs.existsSync(homedir + '/hanzihub-cache/')) {
+    fs.mkdirSync(homedir + '/hanzihub-cache/');
+  }
   try {
     let arr = []
-    const data = await fs.promises.readFile('user-storage/phrase-list.txt', 'utf8');
+    const data = await fs.promises.readFile(path.join(homedir, 'hanzihub-cache/phrase-list.txt'), 'utf8');
     data.split(/\r?\n/).forEach(line =>  {
       if (line.match(/[\u3400-\u9FBF]/)) {
         arr.push(line);
@@ -135,9 +149,12 @@ ipcMain.handle('fetch-phrases', async () => {
 });
 
 ipcMain.handle('fetch-translations', async () => {
+  if (!fs.existsSync(homedir + '/hanzihub-cache/')) {
+    fs.mkdirSync(homedir + '/hanzihub-cache/');
+  }
   try {
     let arr = []
-    const data = await fs.promises.readFile('user-storage/phrase-list.txt', 'utf8');
+    const data = await fs.promises.readFile(path.join(homedir, 'hanzihub-cache/phrase-list.txt'), 'utf8');
     data.split(/\r?\n/).forEach(line =>  {
       if (!line.match(/[\u3400-\u9FBF]/)) {
         arr.push(line);
