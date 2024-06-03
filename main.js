@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
-const lineReader = require('line-reader');
 const fs = require('fs');
 const path = require('path');
 
