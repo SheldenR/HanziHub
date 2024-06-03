@@ -14,7 +14,7 @@ Chinese study deck capable of creating study decks of personalized chinese phras
 
 ## Screenshots
 
-![App Screenshot](https://github.com/SheldenR/HanziHub/blob/main/images/visuals/cover.png?raw=true)
+![App Screenshot](https://github.com/SheldenR/HanziHub/blob/main/visuals/cover.png?raw=true)
 
 ## Contributors
 
